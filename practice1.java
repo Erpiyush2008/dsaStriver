@@ -124,9 +124,8 @@ int bin =0;
             System.out.println();
         }
 
-out.println();
+
         }
 
 
-}
 }
