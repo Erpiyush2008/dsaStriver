@@ -2,7 +2,7 @@ public class LinkedList1 {
     public static class Node {
     int data;
     Node next;
-    public Node(int data) {
+    public Node(int data) { 
         this.data = data;
         this.next = null;
         
@@ -11,7 +11,7 @@ public class LinkedList1 {
 
 public  static Node head;
 public static Node tail;
-
+public static int size;
 public void print() {
     if(head == null) {
         System.out.println("Linked List is empty");
@@ -28,6 +28,7 @@ public void print() {
 
 public void addFirst(int data) {
     Node newNode = new Node(data);
+    size++;
     if (head == null) {
         head = tail = newNode;
         return;
@@ -37,6 +38,7 @@ public void addFirst(int data) {
 }
 public void addLast(int data) {
     Node newNode = new Node(data);
+    size++;
     if (head == null) {
         head = tail = newNode;
         return;
@@ -45,6 +47,22 @@ public void addLast(int data) {
     tail = newNode;
 }
 
+public void add(int index, int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (index == 0) {
+        addFirst(data);
+        return;
+    }
+    Node temp = head;
+    int i = 0;
+    while (i < index - 1) {
+        temp = temp.next;
+        i++;
+    }
+    newNode.next = temp.next;
+    temp.next = newNode;
+}
 
  
 public static void main(String[] args) {
