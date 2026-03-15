@@ -63,6 +63,35 @@ public void add(int index, int data) {
     newNode.next = temp.next;
     temp.next = newNode;
 }
+public void removeFirst() {
+    if (size == 0) {
+        System.out.println("Linked List is empty");
+        return;
+    } else if (size == 1) {
+        head = tail = null;
+        size = 0;
+        return;
+    }
+    head = head.next;
+    size--;
+}
+public void removeLast() {
+    if (size == 0) {
+        System.out.println("Linked List is empty");
+        return;
+    } else if (size == 1) {
+        head = tail = null;
+        size = 0;
+        return;
+    }
+    Node temp = head;
+    for (int i = 0; i < size - 2; i++) {
+        temp = temp.next;
+    }
+    temp.next = null;
+    tail = temp;
+    size--;
+}
 
  
 public static void main(String[] args) {
